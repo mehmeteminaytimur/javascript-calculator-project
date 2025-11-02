@@ -98,7 +98,11 @@ equals.addEventListener('click', function () {
         sonuc = parseFloat(previousNumber) * parseFloat(currentNumber);
     }
     if(operator === "/") {
-        sonuc = parseFloat(previousNumber) / parseFloat(currentNumber);
+        if(parseFloat(currentNumber) === 0) {
+            sonuc = NaN;
+        } else {
+            sonuc = parseFloat(previousNumber) / parseFloat(currentNumber);
+        }
     }
     if(operator === "") {
         sonuc = parseFloat(currentNumber);
